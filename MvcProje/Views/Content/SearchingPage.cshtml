@@ -1,0 +1,25 @@
+﻿@using EntityLayer.Concrete
+@model List<Content>
+@{
+        ViewBag.Title = "SearchingPage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container  pt-5">
+    
+    @using (Html.BeginForm("SearchingPage", "Content", FormMethod.Post))
+    {
+        <div>
+            Aranacak kelimeyi giriniz : @Html.TextBox("search")
+            <input type="submit" class="btn btn-danger" value="Ara"/>
+        </div>
+    }
+    
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <p class="font-weight-bolder">@(i+1). @Model[i].ContentValue</p>
+    }
+    
+
+
+
+</div>

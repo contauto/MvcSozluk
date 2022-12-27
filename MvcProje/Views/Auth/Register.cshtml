@@ -1,0 +1,140 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Kayıt Ol</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="~/colorlib-regform-30/css/opensans-font.css">
+	<link rel="stylesheet" type="text/css" href="~/colorlib-regform-30/fonts/line-awesome/css/line-awesome.min.css">
+	<!-- Jquery -->
+	<link rel="stylesheet" href="~/colorlib-regform-30/css/site-demos.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="~/colorlib-regform-30/css/style.css"/>
+</head>
+<body class="form-v4">
+	<div class="page-content">
+		<div class="form-v4-content">
+			<div class="form-left">
+				<h2>Hoş Geldiniz</h2>
+				<p class="text-1">		Sana gitme demeyeceğim.
+					<br/>
+					Üşüyorsun ceketimi al.
+					<br/>
+					Günün en güzel saatleri bunlar.
+					<br/>
+					Yanımda kal.
+					<br/>
+                    <br/>       
+					Sana gitme demeyeceğim.
+					<br/>
+					Gene de sen bilirsin.
+					<br/>
+					
+					Yalanlar istiyorsan yalanlar söyleyeyim,
+					<br/>
+					İncinirsin.
+					<br/>
+					<br/>
+                                        
+					Sana gitme demeyeceğim,
+					<br/>
+					Ama gitme, Lavinia.
+					<br/>
+					Adını gizleyeceğim
+					<br/>
+					Sen de bilme, Lavinia.
+					<br/></p>
+				<div class="form-left-last">
+					<input type="submit" name="account" class="account" value="Hesabınız var mı?"  onclick="window.location='/Auth/Login';">
+				</div>
+				<div>@TempData["UserExist"]</div>
+			</div>
+					@using (Html.BeginForm("Register", "Auth", FormMethod.Post,new{@class="form-detail form-group",@id="myForm"} ))
+					{
+						<form class="form-detail" action="#" method="post" id="myForm">
+							<h2>Kayıt Formu</h2>
+
+
+								<div class="form-row">
+									<label for="WriterName">Adınız</label>
+									<input required type="text" name="WriterName" id="WriterName" class="input-text">
+								</div>
+								<div class="form-row">
+									<label for="WriterSurname">Soyadınız</label>
+									<input required type="text" name="WriterSurname" id="WriterSurname" class="input-text">
+								</div>
+							<div class="form-row">
+								<label for="WriterMail">E-Mail</label>
+								<input required type="email" name="WriterMail" id="WriterMail" class="input-text">
+							</div>
+								<div class="form-row">
+									<label for="WriterPassword">Şifreniz</label>
+									<input required type="password" name="WriterPassword" id="WriterPassword" class="input-text">
+								
+							</div>
+							<div class="form-checkbox">
+								<label class="container form-row">
+									<p>Koşulları <a href="#" class="text">onaylıyorum</a></p>
+									<br/>
+									<input class=" input-text" type="checkbox" id="checkbox" name="checkbox">
+									<span class="checkmark"></span>
+								</label>
+							</div>
+							<div class="form-row-last ">
+								<input type="submit" name="register" class="register" value="Kaydol">
+							</div>
+						</form>
+					}
+		</div>
+	</div>
+	<script src="~/colorlib-regform-30/js/jquery-3.6.2.min.js"></script>
+	<script src="~/colorlib-regform-30/js/jquery.validate.min.js"></script>
+	<script src="~/colorlib-regform-30/js/additional-methods.min.js"></script>
+	<script>
+		// just for the demos, avoids form submit
+		jQuery.validator.setDefaults({
+		  	debug: false
+		});
+		$( "#myForm" ).validate({
+		  	rules: {
+			    WriterPassword: {required:true,
+			    minlength:8},
+			    checkbox:"required",
+			    WriterName:{
+					minlength:2
+			    },
+			    WriterSurname:{
+                					minlength:2
+                			    }
+		  	},
+		  	messages: {
+		  		WriterName: {
+		  			required: "Lütfen isminizi giriniz",
+		  			minlength:"Minimum 2 karakter olmalı"
+		  		},
+		  		WriterSurname: {
+		  			required: "Lütfen soyisminizi giriniz",
+		  			minlength:"Minimum 2 karakter olmalı"
+		  		},
+		  		WriterMail: {
+		  			required: "Lütfen mail adresinizi giriniz",
+		  			email:"Lütfen geçerli bir e-mail giriniz"
+		  		},
+		  		WriterPassword: {
+	  				required: "Lütfen bir şifre giriniz",
+	  				minlength:"Minimum 8 karakter olmalı"
+		  		},
+		  		checkbox:{
+					  required:"Lütfen koşulları onaylayınız"
+		  		}
+		  	}
+		});
+	</script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

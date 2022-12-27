@@ -1,0 +1,65 @@
+﻿@model EntityLayer.Concrete.Writer 
+@{
+    ViewBag.Title = "EditWriter";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h1>Yazar Düzenleme</h1>
+@using (Html.BeginForm("EditWriter", "Writer", FormMethod.Post))
+            {
+<div class="form-group">
+    @Html.HiddenFor(x => x.WriterId, new { @class = "form-control" })
+    @Html.Label("Yazar Adı")
+    @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control req" })
+    @Html.ValidationMessageFor(x => x.WriterName)
+    <br />
+    @Html.Label("Yazar Soyadı")
+    @Html.TextBoxFor(x => x.WriterSurname, new { @class = "form-control req" })
+    @Html.ValidationMessageFor(x => x.WriterSurname)
+    <br />
+    @Html.Label("Yazar Mail")
+    @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control req" })
+    @Html.ValidationMessageFor(x => x.WriterMail)
+    <br />
+    @Html.Label("Yazar Görsel Linki")
+    @Html.TextBoxFor(x => x.WriterImage, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.WriterImage)
+    <br />
+    @Html.Label("Yazar Unvanı")
+    @Html.TextBoxFor(x => x.WriterTitle, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.WriterTitle)
+    <br />
+    @Html.Label("Hakkında")
+    @Html.TextBoxFor(x => x.WriterAbout, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.WriterAbout)
+    <br />
+    @Html.Label("Rol")
+    @Html.DropDownListFor(x => x.RoleId, (List<SelectListItem>)ViewBag.userRole, new { @class = "form-control" })
+    <br/>
+    @Html.HiddenFor(x=>x.PasswordHash)
+    @Html.HiddenFor(x=>x.PasswordSalt)
+    <button id="submitButton" type="submit" class="btn btn-success">Yazarı Düzenle</button>
+</div>
+            }
+<script src="~/colorlib-regform-30/js/jquery-3.6.2.min.js"></script>
+	<script src="~/colorlib-regform-30/js/jquery.validate.min.js"></script>
+	<script src="~/colorlib-regform-30/js/additional-methods.min.js"></script>
+<script>
+$('.req').blur(function()
+{
+    if( !$(this).val() ) {
+          $("#submitButton").attr("disabled",true);
+    }
+});
+
+$('.req').keyup(function()
+{
+     if( $(this).val() ) {
+                  $("#submitButton").attr("disabled",false);
+            }
+});
+
+
+   
+</script>
