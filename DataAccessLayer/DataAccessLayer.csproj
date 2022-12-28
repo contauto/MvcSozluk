@@ -136,6 +136,18 @@
     <Compile Include="Migrations\202212252112131_dataanotwriter.designer.cs">
       <DependentUpon>202212252112131_dataanotwriter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212281150130_rememberme.cs" />
+    <Compile Include="Migrations\202212281150130_rememberme.designer.cs">
+      <DependentUpon>202212281150130_rememberme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212281154301_rememberme-dto.cs" />
+    <Compile Include="Migrations\202212281154301_rememberme-dto.designer.cs">
+      <DependentUpon>202212281154301_rememberme-dto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212281218476_rememberme1.cs" />
+    <Compile Include="Migrations\202212281218476_rememberme1.designer.cs">
+      <DependentUpon>202212281218476_rememberme1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -155,6 +167,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212252112131_dataanotwriter.resx">
       <DependentUpon>202212252112131_dataanotwriter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212281150130_rememberme.resx">
+      <DependentUpon>202212281150130_rememberme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212281154301_rememberme-dto.resx">
+      <DependentUpon>202212281154301_rememberme-dto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212281218476_rememberme1.resx">
+      <DependentUpon>202212281218476_rememberme1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

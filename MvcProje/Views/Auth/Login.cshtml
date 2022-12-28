@@ -1,4 +1,5 @@
-﻿
+﻿@model EntityLayer.DTOs.WriterForLoginDto
+
 @{
     Layout = null;
 }
@@ -38,20 +39,21 @@
                                 <input id="password-field" name="WriterPassword" type="password" class="form-control" placeholder="Şifre" required>
                                 <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>
-                            <div class="form-group">
-                                <button type="submit" class="form-control btn btn-primary submit px-3">Giriş Yap</button>
-                            </div>
+                            
                             <div class="form-group d-md-flex">
                                 <div class="w-50">
                                     <label class="checkbox-wrap checkbox-primary">
                                         Beni Hatırla
-                                        <input type="checkbox" checked>
+                                        @Html.CheckBoxFor(x=>x.RememberMe)
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="w-50 text-md-right">
                                     <a href="/Auth/Register" style="color: #fff">Kayıt Ol</a>
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary submit px-3">Giriş Yap</button>
                             </div>
                         }
                     </div>

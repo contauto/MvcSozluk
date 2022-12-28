@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Web.Mvc;
 using System.Web.Security;
 using BusinessLayer.Concrete;
@@ -32,7 +33,7 @@ namespace MvcProje.Controllers
 
             if (userToLogin!=null)
             {
-              FormsAuthentication.SetAuthCookie(userToLogin.WriterMail,false);
+              FormsAuthentication.SetAuthCookie(userToLogin.WriterMail,writerForLoginDto.RememberMe);
               Session["Name"] = userToLogin.WriterName;
               Session["WriterMail"] = userToLogin.WriterMail;
               Session["Role"] = userToLogin.Role.RoleName;

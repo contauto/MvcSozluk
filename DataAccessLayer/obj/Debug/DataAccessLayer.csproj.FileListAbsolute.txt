@@ -54,3 +54,6 @@ C:\Users\berke\source\repos\MvcProje\DataAccessLayer\bin\Debug\System.ValueTuple
 C:\Users\berke\source\repos\MvcProje\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.writervalid.resources
 C:\Users\berke\source\repos\MvcProje\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.GenerateResource.cache
 C:\Users\berke\source\repos\MvcProje\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.dataanotwriter.resources
+C:\Users\berke\source\repos\MvcProje\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.rememberme.resources
+C:\Users\berke\source\repos\MvcProje\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.remembermedto.resources
+C:\Users\berke\source\repos\MvcProje\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.rememberme1.resources
