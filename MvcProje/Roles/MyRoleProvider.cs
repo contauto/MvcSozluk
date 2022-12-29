@@ -1,6 +1,7 @@
-﻿using System.Linq;
+﻿
 using System.Web.Security;
-using DataAccessLayer.Concrete;
+using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
 
 namespace MvcProje.Roles
 {
@@ -13,18 +14,12 @@ namespace MvcProje.Roles
 
         public override string[] GetRolesForUser(string username)
         {
-            
-            using (Context context= new Context())
-            {
-                var role = (from writer in context.Writers
-                        select writer.Role);
 
-                string[] roleName = {role.First().RoleName};
+            WriterManager _wm = new WriterManager(new EfWriterDal());
+            
+                
+               string[] roleName= {_wm.GetByWriterMail(username).Role.RoleName};
                 return roleName;
-
-
-            }
-            
         }
 
         
